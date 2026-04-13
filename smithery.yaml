@@ -1,0 +1,10 @@
+name: hash-utils-ai-mcp
+description: "MEOK AI Labs — Hashing, UUID, and ID generation tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/hash-utils-ai-mcp
+license: MIT
+categories: [Security, Utilities]
+tags: [hashing, md5, sha256, checksum, cryptographic-hash]
+runtime: python
+entrypoint: server.py

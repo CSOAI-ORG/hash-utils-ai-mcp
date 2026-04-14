@@ -1,23 +1,91 @@
 {
   "name": "hash-utils-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Hashing, UUID, and ID generation tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/hash-utils-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "Text hashing, hash verification, UUID generation, and nanoid creation.",
+  "version": "1.0.0",
   "tools": [
-    "hash_text",
-    "verify_hash",
-    "generate_uuid",
-    "generate_nanoid"
-  ],
-  "categories": [
-    "Security",
-    "Utilities"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "hash_text",
+      "description": "Hash text using various algorithms.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "encoding": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "verify_hash",
+      "description": "Verify if a text matches an expected hash.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "expected_hash": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "expected_hash"
+        ]
+      }
+    },
+    {
+      "name": "generate_uuid",
+      "description": "Generate UUID(s) of various versions.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "generate_nanoid",
+      "description": "Generate nanoid-style short unique identifiers.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "integer"
+          },
+          "alphabet": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
 }

@@ -1,24 +1,71 @@
-# Hash Utils AI MCP Server
+# Hash Utils Ai
 
-Text hashing, hash verification, UUID generation, and nanoid creation.
+> By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs MCP Server
+
+Hash Utils AI MCP Server
+
+## Installation
+
+```bash
+pip install hash-utils-ai-mcp
+```
+
+## Usage
+
+```bash
+# Run standalone
+python server.py
+
+# Or via MCP
+mcp install hash-utils-ai-mcp
+```
 
 ## Tools
 
-- **hash_text**
-- **verify_hash**
-- **generate_uuid**
-- **generate_nanoid**
+### `hash_text`
+Hash text using various algorithms.
 
-## Quick Start
+**Parameters:**
+- `text` (str)
+- `algorithm` (str)
+- `encoding` (str)
 
-```bash
-pip install mcp
-python server.py
-```
+### `verify_hash`
+Verify if a text matches an expected hash.
 
-## Rate Limits
+**Parameters:**
+- `text` (str)
+- `expected_hash` (str)
+- `algorithm` (str)
 
-- Free tier: 50 calls/day per tool
-- Upgrade: https://meok.ai/pricing
+### `generate_uuid`
+Generate UUID(s) of various versions.
 
-Built by [MEOK AI Labs](https://meok.ai)
+**Parameters:**
+- `version` (int)
+- `count` (int)
+- `namespace` (str)
+- `name` (str)
+
+### `generate_nanoid`
+Generate nanoid-style short unique identifiers.
+
+**Parameters:**
+- `size` (int)
+- `alphabet` (str)
+- `count` (int)
+
+
+## Authentication
+
+Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+
+## Links
+
+- **Website**: [meok.ai](https://meok.ai)
+- **GitHub**: [CSOAI-ORG/hash-utils-ai-mcp](https://github.com/CSOAI-ORG/hash-utils-ai-mcp)
+- **PyPI**: [pypi.org/project/hash-utils-ai-mcp](https://pypi.org/project/hash-utils-ai-mcp/)
+
+## License
+
+MIT — MEOK AI Labs

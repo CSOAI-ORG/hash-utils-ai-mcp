@@ -1,5 +1,5 @@
 name: hash-utils-ai-mcp
-description: Text hashing, hash verification, UUID generation, and nanoid creation.
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: hash_text

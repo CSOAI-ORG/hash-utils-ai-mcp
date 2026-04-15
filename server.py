@@ -17,7 +17,7 @@ import uuid
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("hash-utils-ai-mcp")
+mcp = FastMCP("hash-utils-ai", instructions="MEOK AI Labs MCP Server")
 
 _call_counts: dict[str, list[float]] = defaultdict(list)
 FREE_TIER_LIMIT = 50

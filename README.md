@@ -1,71 +1,38 @@
-# Hash Utils Ai
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs MCP Server
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/hash-utils-ai-mcp)](https://github.com/CSOAI-ORG/hash-utils-ai-mcp/stargazers)
 
-Hash Utils AI MCP Server
+# uhashU utilsU aiU mcp
+
+**Hash Utils AI MCP Server**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/hash-utils-ai-mcp)](https://www.npmjs.com/package/@meok-ai/hash-utils-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/hash-utils-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install hash-utils-ai-mcp
+# or
+npm install -g @meok-ai/hash-utils-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install hash-utils-ai-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `hash_text`
-Hash text using various algorithms.
-
-**Parameters:**
-- `text` (str)
-- `algorithm` (str)
-- `encoding` (str)
-
-### `verify_hash`
-Verify if a text matches an expected hash.
-
-**Parameters:**
-- `text` (str)
-- `expected_hash` (str)
-- `algorithm` (str)
-
-### `generate_uuid`
-Generate UUID(s) of various versions.
-
-**Parameters:**
-- `version` (int)
-- `count` (int)
-- `namespace` (str)
-- `name` (str)
-
-### `generate_nanoid`
-Generate nanoid-style short unique identifiers.
-
-**Parameters:**
-- `size` (int)
-- `alphabet` (str)
-- `count` (int)
-
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
-
-## Links
-
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/hash-utils-ai-mcp](https://github.com/CSOAI-ORG/hash-utils-ai-mcp)
-- **PyPI**: [pypi.org/project/hash-utils-ai-mcp](https://pypi.org/project/hash-utils-ai-mcp/)
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)

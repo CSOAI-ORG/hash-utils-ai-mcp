@@ -1,3 +1,7 @@
+[![hash-utils-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/hash-utils-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/hash-utils-ai-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/hash-utils-ai-mcp)](https://pypi.org/project/hash-utils-ai-mcp/)
+
 [![hash-utils-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/hash-utils-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/hash-utils-ai-mcp)
 
 <div align="center">

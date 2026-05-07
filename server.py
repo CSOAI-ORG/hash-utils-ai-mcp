@@ -42,6 +42,21 @@ def hash_text(text: str, algorithm: str = "sha256", encoding: str = "hex", api_k
         text: Text to hash
         algorithm: Hash algorithm - 'md5', 'sha1', 'sha256', 'sha384', 'sha512', 'sha3_256', 'blake2b'
         encoding: Output encoding - 'hex' or 'base64'
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -71,6 +86,21 @@ def verify_hash(text: str, expected_hash: str, algorithm: str = "sha256", api_ke
         text: Text to verify
         expected_hash: Expected hash value
         algorithm: Hash algorithm used (default 'sha256')
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -95,6 +125,20 @@ def generate_uuid(version: int = 4, count: int = 1, namespace: str = "", name: s
         count: Number of UUIDs to generate (default 1, max 50)
         namespace: Namespace UUID for v3/v5 (use 'dns', 'url', 'oid', or custom UUID)
         name: Name string for v3/v5
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -127,6 +171,20 @@ def generate_nanoid(size: int = 21, alphabet: str = "", count: int = 1, api_key:
         size: Length of the ID (default 21)
         alphabet: Custom alphabet (default: A-Za-z0-9_-)
         count: Number of IDs to generate (default 1, max 50)
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:

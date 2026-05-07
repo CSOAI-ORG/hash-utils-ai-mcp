@@ -1,3 +1,5 @@
+[![hash-utils-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/hash-utils-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/hash-utils-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/hash-utils-ai-mcp)](https://github.com/CSOAI-ORG/hash-utils-ai-mcp/stargazers)

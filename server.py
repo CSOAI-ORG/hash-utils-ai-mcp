@@ -5,7 +5,6 @@ Hashing, UUID, and ID generation tools powered by MEOK AI Labs.
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import hashlib
@@ -74,7 +73,7 @@ def hash_text(text: str, algorithm: str = "sha256", encoding: str = "hex", api_k
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("hash_text")
     algos = {"md5": hashlib.md5, "sha1": hashlib.sha1, "sha256": hashlib.sha256,
@@ -85,6 +84,15 @@ def hash_text(text: str, algorithm: str = "sha256", encoding: str = "hex", api_k
     h = algos[algorithm](text.encode('utf-8'))
     if encoding == "base64":
         import base64
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
         result = base64.b64encode(h.digest()).decode()
     else:
         result = h.hexdigest()
@@ -132,7 +140,7 @@ def verify_hash(text: str, expected_hash: str, algorithm: str = "sha256", api_ke
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("verify_hash")
     algos = {"md5": hashlib.md5, "sha1": hashlib.sha1, "sha256": hashlib.sha256,
@@ -184,7 +192,7 @@ def generate_uuid(version: int = 4, count: int = 1, namespace: str = "", name: s
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("generate_uuid")
     count = min(count, 50)
@@ -244,7 +252,7 @@ def generate_nanoid(size: int = 21, alphabet: str = "", count: int = 1, api_key:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("generate_nanoid")
     count = min(count, 50)
@@ -261,5 +269,8 @@ def generate_nanoid(size: int = 21, alphabet: str = "", count: int = 1, api_key:
             "estimated_collision_resistance": f"~{collision_bits} bits"}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

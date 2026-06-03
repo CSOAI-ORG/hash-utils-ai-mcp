@@ -3,7 +3,6 @@ Hash Utils AI MCP Server
 Hashing, UUID, and ID generation tools powered by MEOK AI Labs.
 """
 
-
 import sys, os
 from auth_middleware import check_access
 
@@ -18,12 +17,19 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("hash-utils-ai", instructions="MEOK AI Labs MCP Server")
 
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 _call_counts: dict[str, list[float]] = defaultdict(list)
 FREE_TIER_LIMIT = 50
 WINDOW = 86400
 
 NANOID_ALPHABET = string.ascii_letters + string.digits + "_-"
-
 
 def _check_rate_limit(tool_name: str) -> None:
     now = time.time()
@@ -31,7 +37,6 @@ def _check_rate_limit(tool_name: str) -> None:
     if len(_call_counts[tool_name]) >= FREE_TIER_LIMIT:
         raise ValueError(f"Rate limit exceeded for {tool_name}. Free tier: {FREE_TIER_LIMIT}/day. Upgrade at https://meok.ai/pricing")
     _call_counts[tool_name].append(now)
-
 
 @mcp.tool()
 def hash_text(text: str, algorithm: str = "sha256", encoding: str = "hex", api_key: str = "") -> dict:
@@ -85,20 +90,11 @@ def hash_text(text: str, algorithm: str = "sha256", encoding: str = "hex", api_k
     if encoding == "base64":
         import base64
 
-STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
-
-def _add_upgrade_tail(response, tier="free"):
-    """Append upgrade nudge to free-tier success responses."""
-    if isinstance(response, dict) and tier == "free":
-        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
-    return response
-
         result = base64.b64encode(h.digest()).decode()
     else:
         result = h.hexdigest()
     return {"hash": result, "algorithm": algorithm, "encoding": encoding,
             "input_length": len(text), "hash_length": len(result)}
-
 
 @mcp.tool()
 def verify_hash(text: str, expected_hash: str, algorithm: str = "sha256", api_key: str = "") -> dict:
@@ -150,7 +146,6 @@ def verify_hash(text: str, expected_hash: str, algorithm: str = "sha256", api_ke
     computed = algos[algorithm](text.encode('utf-8')).hexdigest()
     match = hmac.compare_digest(computed.lower(), expected_hash.lower())
     return {"match": match, "algorithm": algorithm, "computed_hash": computed}
-
 
 @mcp.tool()
 def generate_uuid(version: int = 4, count: int = 1, namespace: str = "", name: str = "", api_key: str = "") -> dict:
@@ -212,7 +207,6 @@ def generate_uuid(version: int = 4, count: int = 1, namespace: str = "", name: s
         uuids.append(str(u))
     return {"uuids": uuids if count > 1 else uuids[0], "version": version, "count": count}
 
-
 @mcp.tool()
 def generate_nanoid(size: int = 21, alphabet: str = "", count: int = 1, api_key: str = "") -> dict:
     """Generate nanoid-style short unique identifiers.
@@ -267,7 +261,6 @@ def generate_nanoid(size: int = 21, alphabet: str = "", count: int = 1, api_key:
     return {"ids": ids if count > 1 else ids[0], "size": size,
             "alphabet_size": len(alpha), "count": count,
             "estimated_collision_resistance": f"~{collision_bits} bits"}
-
 
 def main():
     mcp.run()

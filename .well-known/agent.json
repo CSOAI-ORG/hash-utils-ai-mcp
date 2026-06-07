@@ -1,0 +1,59 @@
+{
+  "name": "hash-utils-ai-mcp",
+  "description": "Hash Utils Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/hash-utils-ai-mcp.html",
+  "version": "1.0.8",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "hash_text",
+      "name": "Hash Text",
+      "description": "hash_text via hash-utils-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "verify_hash",
+      "name": "Verify Hash",
+      "description": "verify_hash via hash-utils-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_uuid",
+      "name": "Generate Uuid",
+      "description": "generate_uuid via hash-utils-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_nanoid",
+      "name": "Generate Nanoid",
+      "description": "generate_nanoid via hash-utils-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

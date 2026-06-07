@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "hash-utils-ai-mcp",
+    "description": "Hash Utils Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.8",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "hash-utils-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "hash_text",
+      "verify_hash",
+      "generate_uuid",
+      "generate_nanoid"
+    ]
+  }
+}

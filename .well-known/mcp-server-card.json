@@ -1,0 +1,25 @@
+{
+  "name": "hash-utils-ai-mcp",
+  "title": "Hash Utils Ai Mcp",
+  "description": "MCP server for hash utils ai. Features hash text, verify hash, generate uuid. From MEOK AI Labs.",
+  "version": "1.0.8",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "hash_text"
+    },
+    {
+      "name": "verify_hash"
+    },
+    {
+      "name": "generate_uuid"
+    },
+    {
+      "name": "generate_nanoid"
+    }
+  ]
+}

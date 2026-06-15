@@ -1,4 +1,4 @@
-<!-- mcp-name: CSOAI-ORG/hash-utils-ai-mcp -->
+<!-- mcp-name: io.github.CSOAI-ORG/hash-utils-ai-mcp -->
 [![MCP Scorecard: 90/100](https://img.shields.io/badge/proofof.ai-90%2F100-5b21b6)](https://proofof.ai/scorecard/hash-utils-ai-mcp.html)
 
 # Hash Utils Ai MCP

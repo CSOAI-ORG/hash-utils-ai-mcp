@@ -1,4 +1,6 @@
 """
+Buy Pro: https://www.csoai.org/checkout
+
 Hash Utils AI MCP Server
 Hashing, UUID, and ID generation tools powered by MEOK AI Labs.
 """
